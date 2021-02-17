@@ -1,6 +1,6 @@
-package src.ui;
+package ui;
 
-import src.domain.Shop2;
+import domain.Shop2;
 
 import javax.swing.*;
 import java.security.KeyException;
