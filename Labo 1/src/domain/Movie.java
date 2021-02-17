@@ -1,18 +1,15 @@
-package domain;
+package src.domain;
 
 public class Movie extends Product{
-    private double price = 5;
+
+    private final double price = 5;
     public Movie(String title, int id, double price) {
         super(title, id, price);
     }
 
     @Override
-    public double getPrice(int productId, int days) {
+    public double getPrice(int days) {
         int daysLeft = days - 3;
-        if (daysLeft > 0) {
-            price += (daysLeft * 2);
-        }
-		return price;
+		return daysLeft > 0 ? price + daysLeft * 2 : price;
     }
-
 }

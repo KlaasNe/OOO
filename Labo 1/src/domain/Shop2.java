@@ -1,11 +1,11 @@
-package domain;
+package src.domain;
 
 import javax.swing.*;
 import java.security.KeyException;
 import java.util.HashMap;
 
 public class Shop2 {
-    private HashMap<Integer, Product> products;
+    private final HashMap<Integer, Product> products;
 
     public Shop2() {
         products = new HashMap<>();
@@ -13,7 +13,7 @@ public class Shop2 {
 
     public void addProduct() {
         String title = JOptionPane.showInputDialog("Enter the title:");
-        int id = getIdInt();
+        int id = inputInt();
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
         double price = Double.parseDouble(JOptionPane.showInputDialog("Enter the price:"));
 
@@ -29,19 +29,20 @@ public class Shop2 {
     }
 
     public void showProduct() throws KeyException {
-        int id = getIdInt();
+        int id = inputInt();
 
         Product product = this.products.get(id);
         JOptionPane.showMessageDialog(null, product.getTitle());
     }
 
     public void showPrice() throws KeyException {
-        int id = getIdInt();
+        int id = inputInt();
         Product product = this.products.get(id);
-//        JOptionPane.showMessageDialog(null, product.getPrice()); NOG AFWERKEN
+        int days = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of days:"));
+        JOptionPane.showMessageDialog(null, product.getPrice(days));
     }
 
-    private int getIdInt() {
+    private int inputInt() {
         return Integer.parseInt(JOptionPane.showInputDialog("Enter the id:"));
     }
 }
