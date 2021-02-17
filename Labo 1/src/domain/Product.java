@@ -1,16 +1,13 @@
-package domain;
+package src.domain;
 
 public abstract class Product {
 
     private String title, type;
     private int id;
-    private double price;
 
-    public Product(String title, int id, double price) {
+    public Product(String title, int id) {
         this.title = title;
         this.id = id;
-        this.price = price;
-        this.type = type;
     }
 
     public String getTitle() {
@@ -29,5 +26,5 @@ public abstract class Product {
         this.id = id;
     }
 
-    public abstract double getPrice(int productId, int days);
+    public abstract double getPrice(int days);
 }
