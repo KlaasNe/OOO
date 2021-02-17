@@ -17,8 +17,15 @@ public class Shop2 {
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
         double price = Double.parseDouble(JOptionPane.showInputDialog("Enter the price:"));
 
-        Product product = new Product(title, id, price, type);
-        this.products.put(id, product);
+        if (type.equalsIgnoreCase("M")) {
+            Product product = new Movie(title, id, price);
+            this.products.put(id, product);
+        }
+
+        else if (type.equalsIgnoreCase("G")) {
+            Product product = new Game(title, id, price);
+            this.products.put(id, product);
+        }
     }
 
     public void showProduct() throws KeyException {
@@ -31,7 +38,7 @@ public class Shop2 {
     public void showPrice() throws KeyException {
         int id = getIdInt();
         Product product = this.products.get(id);
-        JOptionPane.showMessageDialog(null, product.getPrice());
+//        JOptionPane.showMessageDialog(null, product.getPrice()); NOG AFWERKEN
     }
 
     private int getIdInt() {
