@@ -15,15 +15,14 @@ public class Shop2 {
         String title = JOptionPane.showInputDialog("Enter the title:");
         int id = inputInt();
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
-        double price = Double.parseDouble(JOptionPane.showInputDialog("Enter the price:"));
 
         if (type.equalsIgnoreCase("M")) {
-            Product product = new Movie(title, id, price);
+            Product product = new Movie(title, id);
             this.products.put(id, product);
         }
 
         else if (type.equalsIgnoreCase("G")) {
-            Product product = new Game(title, id, price);
+            Product product = new Game(title, id);
             this.products.put(id, product);
         }
     }

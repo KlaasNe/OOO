@@ -4,12 +4,10 @@ public abstract class Product {
 
     private String title, type;
     private int id;
-    private final double price;
 
-    public Product(String title, int id, double price) {
+    public Product(String title, int id) {
         this.title = title;
         this.id = id;
-        this.price = price;
     }
 
     public String getTitle() {

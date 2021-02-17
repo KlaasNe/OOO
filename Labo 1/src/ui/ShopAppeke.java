@@ -13,7 +13,11 @@ public class ShopAppeke {
         int choice = -1;
         while (choice != 0) {
             String choiceString = JOptionPane.showInputDialog(menu);
-            choice = Integer.parseInt(choiceString);
+            try {
+                choice = Integer.parseInt(choiceString);
+            } catch (NumberFormatException e) {
+                choice = 0;
+            }
             try {
                 if (choice == 1) {
                     shop.addProduct();
@@ -22,8 +26,8 @@ public class ShopAppeke {
                 } else if (choice == 3) {
                     shop.showPrice();
                 }
-            } catch (KeyException k) {
-                System.out.println("id does not exist"); //TODO
+            } catch (KeyException e) {
+                System.out.println(e); //TODO
             }
         }
     }

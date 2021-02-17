@@ -3,8 +3,9 @@ package src.domain;
 public class Movie extends Product{
 
     private final double price = 5;
-    public Movie(String title, int id, double price) {
-        super(title, id, price);
+
+    public Movie(String title, int id) {
+        super(title, id);
     }
 
     @Override
