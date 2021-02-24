@@ -1,6 +1,6 @@
 package src.domain;
 
-public class Movie extends Product{
+public class Movie extends Product {
 
     private final double price = 5;
 

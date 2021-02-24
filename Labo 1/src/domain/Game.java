@@ -1,6 +1,6 @@
 package src.domain;
 
-public class Game extends Product{
+public class Game extends Product {
 
     private final double price = 5;
     public Game(String title, int id) {
