@@ -1,8 +1,8 @@
 package domain;
 
-public class Spiegeling {
+public class Spiegeling extends GeheimSchrift{
 
-    private final String text;
+    private String text;
 
     public Spiegeling(String text) {
         this.text = text;
@@ -12,7 +12,13 @@ public class Spiegeling {
         return this.text;
     }
 
-    public String spiegel(String input) {
+    @Override
+    public String decrypt(String input) {
+        return new StringBuilder(input).reverse().toString();
+    }
+
+    @Override
+    public String encrypt(String input) {
         return new StringBuilder(input).reverse().toString();
     }
 }
