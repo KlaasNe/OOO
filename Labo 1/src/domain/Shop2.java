@@ -1,4 +1,4 @@
-package src.domain;
+package domain;
 
 import javax.swing.*;
 import java.security.KeyException;
