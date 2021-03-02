@@ -10,8 +10,7 @@ public class CaesarText extends GeheimSchrift {
     @Override
     public String decrypt(String input) {
         StringBuilder sb = new StringBuilder();
-        String output = sb.toString();
-        for (char c: output.toLowerCase().toCharArray()) { // ["k", "o", "e", "n", "1"]
+        for (char c: input.toLowerCase().toCharArray()) { // ["k", "o", "e", "n", "1"]
             if (c <= 'z' && c >= 'a') {
                 sb.append((char) ((c - verplaatsing - 'z') % 26 + 'z'));
             } else {
